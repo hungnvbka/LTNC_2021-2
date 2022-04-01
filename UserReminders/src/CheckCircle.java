@@ -30,14 +30,8 @@ public class CheckCircle {
 			System.out.println("----------------------------------------------");
 
 		}
-
-		double[] squareX = new double[2];
-		double[] squareY = new double[2];
-		for (int i = 0; i < 2; i++) {
-			squareX[i] = Math.pow(x[i], 2);
-			squareY[i] = Math.pow(y[i], 2);
-		}
-		double squareDistance = Math.pow(squareX[0] - squareX[1], 2) + Math.pow(squareY[0] - squareY[1], 2);
+		
+		double squareDistance = Math.pow(x[0] - x[1], 2) + Math.pow(y[0] - y[1], 2);
 		double distance = Math.sqrt(squareDistance);
 		if (distance > (radius[0] + radius[1])) {
 			System.out.println("Two circles do not intersect!");

@@ -23,10 +23,9 @@ public class CalDistance {
 			System.out.println("----------------------------------------------");
 
 		}
-		for (int i = 0; i < 2; i++) {
-			double squareDistance = Math.pow(x[i], y[i]);
-			double distance = Math.sqrt(squareDistance);
-			System.out.println("Distance of vector " + (i + 1) + ": " + distance);
-		}
+		
+		double squareDistance = Math.pow(x[0] - x[1], 2) + Math.pow(y[0] - y[1], 2);
+		double distance = Math.sqrt(squareDistance);
+		System.out.println("Distance of 2 vector: " + distance);
 	}
 }

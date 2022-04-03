@@ -11,7 +11,7 @@ public class CheckCircle {
 
 //		Create vector center
 		for (int i = 0; i < 2; i++) {
-			System.out.println("Enter center of circle " + (i + 1) + ": ");
+			System.out.println("Enter point vector of circle " + (i + 1) + ": ");
 
 //	    Create horzontal
 			System.out.println("Enter x:");

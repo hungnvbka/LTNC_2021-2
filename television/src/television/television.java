@@ -1,9 +1,9 @@
 package television;
 
 public class television {
-	int channel;
-	int volumeLevel;
-	boolean on;
+	private int channel;
+	private int volumeLevel;
+	private boolean on;
 	
 	public television() {
 		channel = 0;
@@ -42,10 +42,29 @@ public class television {
 	void volumeDown() {
 		volumeLevel--;
 	}
+	void printStatus() {
+		if(on) {
+			System.out.println("TV: on");
+		}
+		else {
+			System.out.println("TV: off");
+		}
+	}
 	
 	public static void main (String[] args) {
 		television tv = new television();
-		System.out.println(tv.channel);
+		tv.setChannel(2);
+		tv.volumeUp();
+		tv.turnOn();
+		
+		System.out.println("Channel: "+tv.channel);
+		System.out.println("Volume: "+tv.volumeLevel);
+		tv.printStatus();
+		System.out.println("-------------------------------------------------");
+		
+		tv.turnOff();
+		tv.printStatus();
+		System.out.println("-------------------------------------------------");
 	}
 }
 

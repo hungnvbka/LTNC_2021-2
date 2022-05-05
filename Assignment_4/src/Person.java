@@ -176,7 +176,7 @@ public class Person {
 			}
 
 			public String toString() {
-				return this.rank;
+				return this.getRank();
 			}
 		}
 
@@ -184,6 +184,27 @@ public class Person {
 
 	public static void main(String arg[]) {
 		Person p = new Person();
+		p.setAddress("Ha Noi");
+		p.setEmail("hung.nv182566@sis.hust.edu.vn");
+		p.setName("Nguyen Van Hung");
+		p.setPhoneNum("0943620062");
+		System.out.println("This my profile: " + p.toString());
+		System.out.println("______________________________________________________________________________________");
+
+		Person.Employee e = p.new Employee();
+		System.out.println("This is my employee profile: " + e.toString());
+		System.out.println("______________________________________________________________________________________");
+
+		Person.Student s = p.new Student();
+		System.out.println("This is my student profile: " + s.toString());
+		System.out.println("______________________________________________________________________________________");
 		
+		Person.Employee.Lecturer l = e.new Lecturer();
+		System.out.println("This is my lecturer profile: " + l.toString());
+		System.out.println("______________________________________________________________________________________");
+
+		Person.Employee.Staff st = e.new Staff();
+		System.out.println("This is my staff profile: " + st.toString());
+		System.out.println("______________________________________________________________________________________");
 	}
 }

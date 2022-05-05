@@ -57,27 +57,13 @@ public class MyRectangle2D {
 		return this.height * this.width;
 	}
 
-	public double getAreaTriangle(double x0, double y0, double x1, double y1, double x2, double y2) {
-		double d0 = Math.sqrt(Math.pow(Math.abs(x0 - x1), 2) + Math.pow(Math.abs(y0 - y1), 2));
-		double d1 = Math.sqrt(Math.pow(Math.abs(x1 - x2), 2) + Math.pow(Math.abs(y1 - y2), 2));
-		double d2 = Math.sqrt(Math.pow(Math.abs(x0 - x2), 2) + Math.pow(Math.abs(y0 - y2), 2));
-		double p = (d0 + d1 + d2) / 2;
-		double s = Math.sqrt(p * (p - d0) * (p - d1) * (p - d2));
-
-		return s;
-	}
-
 	public boolean contains(double x, double y) {
 		double x1 = this.x - this.width / 2;
 		double x2 = this.x + this.width / 2;
 		double y1 = this.y - this.height / 2;
 		double y2 = this.y + this.height / 2;
-		double s0 = getAreaTriangle(x, y, x1, y1, x2, y2);
-		double s1 = getAreaTriangle(x, y, x1, y2, x2, y2);
-		double s2 = getAreaTriangle(x, y, x1, y1, x1, y2);
-		double s3 = getAreaTriangle(x, y, x1, y1, x2, y1);
 
-		if (this.getArea() == (s0 + s1 + s2 + s3)) {
+		if (x <= x2 && x >= x1 && y <= y2 && y >= y1) {
 			return true;
 		} else
 			return false;
@@ -103,7 +89,7 @@ public class MyRectangle2D {
 
 	public static void main(String arg[]) {
 		MyRectangle2D smallRectangle = new MyRectangle2D();
-		MyRectangle2D bigRectangle = new MyRectangle2D(0, 0, 10, 20);
+		MyRectangle2D bigRectangle = new MyRectangle2D(0, 0, 3, 4);
 
 		System.out.println("Small Rectangle: ");
 		smallRectangle.printRectangel();
